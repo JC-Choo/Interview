@@ -1,0 +1,8 @@
+Name        Best    Avg     Worst   Run-time(정수 60,000개, 단위:s)
+삽입정렬    n       n2      n2          7.438
+선택정렬    n2      n2      n2          10.842
+버블정렬    n2      n2      n2          22.894
+셸 정렬     n       n1.5    n2          0.056
+퀵 정렬     nlog2n  nlog2n  n2          0.014
+힙 정렬     nlog2n  nlog2n  nlog2n      0.034
+병합정렬    nlog2n  nlog2n  nlog2n      0.026
