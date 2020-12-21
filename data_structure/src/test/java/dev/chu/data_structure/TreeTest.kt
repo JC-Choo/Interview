@@ -1,4 +1,4 @@
-package dev.chu.algorithm
+package dev.chu.data_structure
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package dev.chu.algorithm
+package dev.chu.data_structure
 
 class Node(var value: Int) {
     var leftChild: Node? = null
