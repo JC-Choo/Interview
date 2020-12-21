@@ -1,2 +1,4 @@
+include ':algorithm'
+include ':data_structure'
 include ':app'
 rootProject.name = "AndroidInterview"
