@@ -20,6 +20,8 @@ class DS_LinkedList {
         a.addFirst(1)
         a.forEach { print("$it ") }
         println()
+
+
         head = Node(null, null)
         addFront(head, 0)
         addFront(head, 1)
@@ -47,6 +49,11 @@ class DS_LinkedList {
         node.data = data
         node.next = root.next
         root.next = node
+    }
+
+    private fun removeFront(root: Node) {
+        val front = root.next
+        root.next = front?.next
     }
 
     private fun showAll() {
