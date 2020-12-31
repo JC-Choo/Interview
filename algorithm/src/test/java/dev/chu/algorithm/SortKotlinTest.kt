@@ -1,11 +1,18 @@
 package dev.chu.algorithm
 
+import dev.chu.algorithm.programmers.SortKotlin
 import dev.chu.algorithm.sort.BubbleSort
 import dev.chu.algorithm.sort.InsertionSort
 import dev.chu.algorithm.sort.SelectionSort
 import org.junit.Test
 
-class SortTest {
+class SortKotlinTest {
+
+    @Test
+    fun 프로그래머스_sort() {
+        val sort = SortKotlin()
+        sort.main()
+    }
 
     @Test
     fun 버블정렬() {
