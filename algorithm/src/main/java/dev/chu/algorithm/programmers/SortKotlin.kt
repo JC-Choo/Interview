@@ -10,8 +10,40 @@ class SortKotlin {
 
         val numbers00 = intArrayOf(6, 10, 2)
         val numbers01 = intArrayOf(3, 30, 34, 5, 9)
-        println(Level_2_가장_큰_수(numbers00))
+//        println(Level_2_가장_큰_수(numbers00))
         println(Level_2_가장_큰_수(numbers01))
+    }
+
+    private fun Level_2_가장_큰_수(numbers: IntArray): String {
+        var answer = ""
+
+        var list = mutableListOf<Int>()
+        for (i in numbers.indices) {
+            var sum = numbers[i].toString()
+            for (j in numbers.indices) {
+                if (i != j) {
+                    println("1 i = $i j = $j sum = $sum")
+                    sum += numbers[j].toString()
+                }
+            }
+            println("1 result sum = $sum")
+            list.add(sum.toInt())
+
+            sum = numbers[i].toString()
+            for (j in numbers.size-1 downTo 0) {
+                if (i != j) {
+                    sum += numbers[j].toString()
+                }
+            }
+            println("2 result sum = $sum")
+            list.add(sum.toInt())
+        }
+
+        list.forEach { print("$it ") }
+        println("sorted")
+        list.sortedDescending().forEach { print("$it ") }
+
+        return answer
     }
 
     private fun Level_1_K번째수(array: IntArray, commands: Array<IntArray>): IntArray {
@@ -34,32 +66,6 @@ class SortKotlin {
         answer = commands.map { intArr ->
             array.sliceArray(IntRange(intArr[0]-1, intArr[1]-1)).sortedArray()[intArr[2]-1]
         }.toIntArray()
-
-        return answer
-    }
-
-    private fun Level_2_가장_큰_수(numbers: IntArray): String {
-        var answer = ""
-
-        val list = mutableListOf<String>()
-        numbers.forEachIndexed { index, i ->
-            if (i == 0) return@forEachIndexed
-            var str = i.toString()
-            numbers.forEachIndexed { index2, j ->
-                if (index != index2) {
-                    println("str 1 = $str")
-                    str += j.toString()
-                    list.add(str)
-                    println("str 2 = $str")
-                    str = i.toString()
-                }
-            }
-        }
-        list.forEach { print("$it ") }
-        println()
-        list.sortedDescending().forEach { print("$it ") }
-        println()
-        answer = list.sortedDescending()[0]
 
         return answer
     }
