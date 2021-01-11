@@ -8,6 +8,7 @@ class SortKotlin {
 //        Level_1_K번째수(arr, arr2)
 
 
+<<<<<<< HEAD
 //        val numbers00 = intArrayOf(6, 10, 2)
 //        val numbers01 = intArrayOf(3, 30, 34, 5, 9)
 //        val numbers02 = intArrayOf(121, 12)
@@ -17,6 +18,48 @@ class SortKotlin {
 //        println(Level_2_가장_큰_수(numbers02))
 //        println(Level_2_가장_큰_수(numbers03))
 
+=======
+        val numbers00 = intArrayOf(6, 10, 2)
+        val numbers01 = intArrayOf(3, 30, 34, 5, 9)
+//        println(Level_2_가장_큰_수(numbers00))
+        println(Level_2_가장_큰_수(numbers01))
+    }
+
+    private fun Level_2_가장_큰_수(numbers: IntArray): String {
+        var answer = ""
+
+        var list = mutableListOf<Int>()
+        for (i in numbers.indices) {
+            var sum = numbers[i].toString()
+            for (j in numbers.indices) {
+                if (i != j) {
+                    println("1 i = $i j = $j sum = $sum")
+                    sum += numbers[j].toString()
+                }
+            }
+            println("1 result sum = $sum")
+            list.add(sum.toInt())
+
+            sum = numbers[i].toString()
+            for (j in numbers.size-1 downTo 0) {
+                if (i != j) {
+                    sum += numbers[j].toString()
+                }
+            }
+            println("2 result sum = $sum")
+            list.add(sum.toInt())
+        }
+
+        list.forEach { print("$it ") }
+        println("sorted")
+        list.sortedDescending().forEach { print("$it ") }
+
+        return answer
+    }
+
+    private fun Level_1_K번째수(array: IntArray, commands: Array<IntArray>): IntArray {
+        var answer = intArrayOf()
+>>>>>>> 72b4b04... Modify sort level 2
 
         val citations00 = intArrayOf(3, 0, 6, 1, 5)
         val citations01 = intArrayOf(10, 8, 5, 4, 3)
@@ -41,6 +84,7 @@ class SortKotlin {
 
         return citations.size
     }
+<<<<<<< HEAD
 
     private fun Level_2_가장_큰_수(numbers: IntArray): String {
         var answer = ""
@@ -82,4 +126,6 @@ class SortKotlin {
 
         return answer
     }
+=======
+>>>>>>> 72b4b04... Modify sort level 2
 }
