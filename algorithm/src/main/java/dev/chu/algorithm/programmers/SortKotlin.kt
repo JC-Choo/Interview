@@ -10,38 +10,27 @@ class SortKotlin {
 
         val numbers00 = intArrayOf(6, 10, 2)
         val numbers01 = intArrayOf(3, 30, 34, 5, 9)
-//        println(Level_2_가장_큰_수(numbers00))
+        val numbers02 = intArrayOf(121, 12)
+        val numbers03 = intArrayOf(0, 0, 0, 0)
+        println(Level_2_가장_큰_수(numbers00))
         println(Level_2_가장_큰_수(numbers01))
+        println(Level_2_가장_큰_수(numbers02))
+        println(Level_2_가장_큰_수(numbers03))
     }
 
     private fun Level_2_가장_큰_수(numbers: IntArray): String {
         var answer = ""
 
-        var list = mutableListOf<Int>()
-        for (i in numbers.indices) {
-            var sum = numbers[i].toString()
-            for (j in numbers.indices) {
-                if (i != j) {
-                    println("1 i = $i j = $j sum = $sum")
-                    sum += numbers[j].toString()
-                }
+        numbers.map {
+            it.toString()
+        }.sortedWith(Comparator<String> { a, b ->
+            (b + a).compareTo(a + b)
+        }).forEachIndexed { index, s ->
+            if (index == 0 && s == "0") {
+                return "0"
             }
-            println("1 result sum = $sum")
-            list.add(sum.toInt())
-
-            sum = numbers[i].toString()
-            for (j in numbers.size-1 downTo 0) {
-                if (i != j) {
-                    sum += numbers[j].toString()
-                }
-            }
-            println("2 result sum = $sum")
-            list.add(sum.toInt())
+            answer+=s
         }
-
-        list.forEach { print("$it ") }
-        println("sorted")
-        list.sortedDescending().forEach { print("$it ") }
 
         return answer
     }
@@ -50,17 +39,17 @@ class SortKotlin {
         var answer = intArrayOf()
 
         // 풀이 1
-//        val list = mutableListOf<Int>()
-//        commands.forEach { intArr ->
-//            val i = intArr[0]
-//            val j = intArr[1]
-//            val k = intArr[2]
-//
-//            val arr = array.copyOfRange(i-1, j)
-//            arr.sort()
-//            list.add(arr[k-1])
-//        }
-//        answer = list.toIntArray()
+        val list = mutableListOf<Int>()
+        commands.forEach { intArr ->
+            val i = intArr[0]
+            val j = intArr[1]
+            val k = intArr[2]
+
+            val arr = array.copyOfRange(i-1, j)
+            arr.sort()
+            list.add(arr[k-1])
+        }
+        answer = list.toIntArray()
 
         // 풀이 2
         answer = commands.map { intArr ->
