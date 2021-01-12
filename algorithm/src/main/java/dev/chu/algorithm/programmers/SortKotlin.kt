@@ -9,6 +9,9 @@ class SortKotlin {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a38c379... Add level 2 H-index
 //        val numbers00 = intArrayOf(6, 10, 2)
 //        val numbers01 = intArrayOf(3, 30, 34, 5, 9)
 //        val numbers02 = intArrayOf(121, 12)
@@ -18,41 +21,56 @@ class SortKotlin {
 //        println(Level_2_가장_큰_수(numbers02))
 //        println(Level_2_가장_큰_수(numbers03))
 
+<<<<<<< HEAD
 =======
         val numbers00 = intArrayOf(6, 10, 2)
         val numbers01 = intArrayOf(3, 30, 34, 5, 9)
-//        println(Level_2_가장_큰_수(numbers00))
+        val numbers02 = intArrayOf(121, 12)
+        val numbers03 = intArrayOf(0, 0, 0, 0)
+        println(Level_2_가장_큰_수(numbers00))
         println(Level_2_가장_큰_수(numbers01))
+        println(Level_2_가장_큰_수(numbers02))
+        println(Level_2_가장_큰_수(numbers03))
+=======
+
+        val citations00 = intArrayOf(3, 0, 6, 1, 5) // 3
+        val citations01 = intArrayOf(10, 8, 5, 4, 3)    // 4
+        val citations02 = intArrayOf(4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6) // 6
+        val citations03 = intArrayOf(10, 50, 100)   // 3 ???
+        val citations04 = intArrayOf(2, 2, 2) // 2 ???
+        val citations05 = intArrayOf(10, 100) // 2 ???
+        println("3 = "+Level2_H_index(citations00))
+        println("4 = "+Level2_H_index(citations01))
+        println("6 = "+Level2_H_index(citations02))
+        println("3 = "+Level2_H_index(citations03))
+        println("2 = "+Level2_H_index(citations04))
+        println("2 = "+Level2_H_index(citations05))
+    }
+
+    private fun Level2_H_index(citations: IntArray): Int {
+        citations.sortedDescending().forEachIndexed { index, i ->
+            if (index >= i) {
+                return index
+            }
+        }
+
+        return citations.size
+>>>>>>> a38c379... Add level 2 H-index
     }
 
     private fun Level_2_가장_큰_수(numbers: IntArray): String {
         var answer = ""
 
-        var list = mutableListOf<Int>()
-        for (i in numbers.indices) {
-            var sum = numbers[i].toString()
-            for (j in numbers.indices) {
-                if (i != j) {
-                    println("1 i = $i j = $j sum = $sum")
-                    sum += numbers[j].toString()
-                }
+        numbers.map {
+            it.toString()
+        }.sortedWith(Comparator<String> { a, b ->
+            (b + a).compareTo(a + b)
+        }).forEachIndexed { index, s ->
+            if (index == 0 && s == "0") {
+                return "0"
             }
-            println("1 result sum = $sum")
-            list.add(sum.toInt())
-
-            sum = numbers[i].toString()
-            for (j in numbers.size-1 downTo 0) {
-                if (i != j) {
-                    sum += numbers[j].toString()
-                }
-            }
-            println("2 result sum = $sum")
-            list.add(sum.toInt())
+            answer+=s
         }
-
-        list.forEach { print("$it ") }
-        println("sorted")
-        list.sortedDescending().forEach { print("$it ") }
 
         return answer
     }
