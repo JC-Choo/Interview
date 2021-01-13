@@ -33,12 +33,12 @@ class SortKotlin {
         println(Level_2_가장_큰_수(numbers03))
 =======
 
-        val citations00 = intArrayOf(3, 0, 6, 1, 5) // 3
-        val citations01 = intArrayOf(10, 8, 5, 4, 3)    // 4
-        val citations02 = intArrayOf(4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6) // 6
-        val citations03 = intArrayOf(10, 50, 100)   // 3 ???
-        val citations04 = intArrayOf(2, 2, 2) // 2 ???
-        val citations05 = intArrayOf(10, 100) // 2 ???
+        val citations00 = intArrayOf(3, 0, 6, 1, 5)
+        val citations01 = intArrayOf(10, 8, 5, 4, 3)
+        val citations02 = intArrayOf(4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6)
+        val citations03 = intArrayOf(10, 50, 100)
+        val citations04 = intArrayOf(2, 2, 2)
+        val citations05 = intArrayOf(10, 100)
         println("3 = "+Level2_H_index(citations00))
         println("4 = "+Level2_H_index(citations01))
         println("6 = "+Level2_H_index(citations02))
