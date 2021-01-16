@@ -7,7 +7,6 @@ class SortKotlin {
 //        val arr2 = arrayOf(intArrayOf(2, 5, 3), intArrayOf(4, 4, 1), intArrayOf(1, 7, 3))
 //        Level_1_K번째수(arr, arr2)
 
-
 //        val numbers00 = intArrayOf(6, 10, 2)
 //        val numbers01 = intArrayOf(3, 30, 34, 5, 9)
 //        val numbers02 = intArrayOf(121, 12)
@@ -16,7 +15,6 @@ class SortKotlin {
 //        println(Level_2_가장_큰_수(numbers01))
 //        println(Level_2_가장_큰_수(numbers02))
 //        println(Level_2_가장_큰_수(numbers03))
-
 
         val citations00 = intArrayOf(3, 0, 6, 1, 5)
         val citations01 = intArrayOf(10, 8, 5, 4, 3)
