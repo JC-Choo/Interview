@@ -75,7 +75,8 @@ class SortKotlin {
 
         // 풀이 2
         answer = commands.map { intArr ->
-            array.sliceArray(IntRange(intArr[0]-1, intArr[1]-1)).sortedArray()[intArr[2]-1]
+            array.sliceArray(IntRange(intArr[0]-1, intArr[1]-1))
+                    .sortedArray()[intArr[2]-1]
         }.toIntArray()
 
         return answer
