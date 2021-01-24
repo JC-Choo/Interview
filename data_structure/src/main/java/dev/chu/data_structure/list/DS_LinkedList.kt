@@ -1,4 +1,4 @@
-package dev.chu.data_structure
+package dev.chu.data_structure.list
 
 import java.util.*
 

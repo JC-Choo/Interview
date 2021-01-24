@@ -1,5 +1,6 @@
             package dev.chu.data_structure
 
+import dev.chu.data_structure.list.DS_LinkedList
 import org.junit.Test
 
 import org.junit.Assert.*
