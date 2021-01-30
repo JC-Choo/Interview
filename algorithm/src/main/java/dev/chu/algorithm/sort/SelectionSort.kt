@@ -18,8 +18,8 @@ class SelectionSort {
             var min = arr[i]
 
             for (j in i+1 until arr.size) {
-                // min 이 i+1번째 arr 보다 크다면, 최소로 만들기 위해 min에 arr[j]의 값을 입력하고
-                // 그렇다면, min 은 현재 비교 대상과의 "최소 값"이므로, 변경한 j의 값을 index에 넣어준다.
+                // min 이 i+1번째 arr 보다 크다면, 최소로 만들기 위해 min 에 arr[j]의 값을 입력하고
+                // 그렇다면, min 은 현재 비교 대상과의 "최소 값"이므로, 변경한 j의 값을 index 에 넣어준다.
                 if (min > arr[j]) {
                     min = arr[j]
                     index = j
