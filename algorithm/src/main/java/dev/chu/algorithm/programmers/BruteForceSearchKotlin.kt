@@ -9,13 +9,13 @@ import kotlin.math.sqrt
 object BruteForceSearchKotlin {
     @JvmStatic
     fun main(args: Array<String>) {
-        //        Level_1_모의고사(intArrayOf(1, 2, 3, 4, 5))
-        //        Level_1_모의고사(intArrayOf(1, 3, 2, 4, 2))
-        //        Level_1_모의고사(intArrayOf(3, 2, 4, 2, 1, 5, 2, 4))
+        Level_1_모의고사(intArrayOf(1, 2, 3, 4, 5))
+        Level_1_모의고사(intArrayOf(1, 3, 2, 4, 2))
+        Level_1_모의고사(intArrayOf(3, 2, 4, 2, 1, 5, 2, 4))
 
-        //        println("8 = " + solution("8"))
-        //        println("17 = " + solution("31"))
-        //        println("011 = " + solution("011"))
+        println("8 = " + solution("8"))
+        println("17 = " + solution("31"))
+        println("011 = " + solution("011"))
 
         Level_2_카펫(10, 2).forEach { print("$it ") }
         println()
@@ -44,12 +44,12 @@ object BruteForceSearchKotlin {
     }
 
     fun setResult2(set: Set<Int>, yellow: Int): IntArray {
-        val mid = set.size/2
+        val mid = set.size / 2
         if (set.size % 2 == 0) {
             var index = mid
             for (i in mid until set.size) {
                 index -= 1
-                if ((set.elementAt(i)-2) * (set.elementAt(index)-2) == yellow) {
+                if ((set.elementAt(i) - 2) * (set.elementAt(index) - 2) == yellow) {
                     return intArrayOf(set.elementAt(i), set.elementAt(index))
                 }
             }
@@ -61,12 +61,12 @@ object BruteForceSearchKotlin {
 
     // region 누군가 푼 거
     fun setResult(brown: Int, yellow: Int): IntArray {
-        return (1 .. yellow).filter {
-            yellow%it == 0
+        return (1..yellow).filter {
+            yellow % it == 0
         }.first {
-            brown == (yellow/it*2) + (it * 2) + 4
+            brown == (yellow / it * 2) + (it * 2) + 4
         }.let {
-            intArrayOf(yellow/it+2, it+2)
+            intArrayOf(yellow / it + 2, it + 2)
         }
     }
     // endregion
