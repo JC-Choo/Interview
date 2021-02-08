@@ -4,6 +4,14 @@ import org.junit.Test
 
 class KotlinTest {
     @Test
+    fun testPalindrome() {
+        println("Hello".isPalindrome()) // print false
+        println("LoL".isPalindrome()) // print true
+    }
+
+    fun String.isPalindrome() = this == reversed()
+
+    @Test
     fun test() {
         val test00 = arrayOf("cc", "aaaa", "bbb")
         println(test00.sortedWith(Comparator<String> { a, b ->
