@@ -1,5 +1,6 @@
 package dev.chu.data_structure
 
+import dev.chu.data_structure.tree.BinaryTree
 import org.junit.Test
 
 class TreeTest {
