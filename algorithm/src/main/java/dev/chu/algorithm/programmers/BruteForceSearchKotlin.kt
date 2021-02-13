@@ -8,24 +8,24 @@ import kotlin.math.sqrt
 object BruteForceSearchKotlin {
     @JvmStatic
     fun main(args: Array<String>) {
-        Level_1_모의고사(intArrayOf(1, 2, 3, 4, 5))
-        Level_1_모의고사(intArrayOf(1, 3, 2, 4, 2))
-        Level_1_모의고사(intArrayOf(3, 2, 4, 2, 1, 5, 2, 4))
-
-        println("8 = " + solution("8"))
-        println("17 = " + solution("31"))
-        println("011 = " + solution("011"))
-
-        Level_2_카펫(10, 2).forEach { print("$it ") }
-        println()
-        Level_2_카펫(8, 1).forEach { print("$it ") }
-        println()
-        Level_2_카펫(24, 24).forEach { print("$it ") }
-        println()
-        Level_2_카펫(14, 4).forEach { print("$it ") }
-        println()
-        Level_2_카펫(18, 6).forEach { print("$it ") }
-        println()
+//        Level_1_모의고사(intArrayOf(1, 2, 3, 4, 5))
+//        Level_1_모의고사(intArrayOf(1, 3, 2, 4, 2))
+//        Level_1_모의고사(intArrayOf(3, 2, 4, 2, 1, 5, 2, 4))
+//
+//        println("8 = " + solution("8"))
+//        println("17 = " + solution("31"))
+//        println("011 = " + solution("011"))
+//
+//        Level_2_카펫(10, 2).forEach { print("$it ") }
+//        println()
+//        Level_2_카펫(8, 1).forEach { print("$it ") }
+//        println()
+//        Level_2_카펫(24, 24).forEach { print("$it ") }
+//        println()
+//        Level_2_카펫(14, 4).forEach { print("$it ") }
+//        println()
+//        Level_2_카펫(18, 6).forEach { print("$it ") }
+//        println()
     }
 
     fun Level_2_카펫(brown: Int, yellow: Int): IntArray {
