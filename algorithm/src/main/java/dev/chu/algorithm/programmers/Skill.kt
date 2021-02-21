@@ -28,8 +28,26 @@ object Skill {
 //        println(스킬테스트_레벨_2_조이스틱("JEROEN"))  // 56
 //        println(스킬테스트_레벨_2_조이스틱("JAN"))  // 23
 
-        println(스킬테스트_레벨_2_소수("17"))    // 3 -> 7 17 71
-        println(스킬테스트_레벨_2_소수("011"))   // 2 -> 11 101
+//        println(스킬테스트_레벨_2_소수("17"))    // 3 -> 7 17 71
+//        println(스킬테스트_레벨_2_소수("011"))   // 2 -> 11 101
+
+        println(스킬테스트_레벨_2_피보나치(3)) // 2
+        println(스킬테스트_레벨_2_피보나치(4)) // 3
+        println(스킬테스트_레벨_2_피보나치(5)) // 5
+    }
+
+    // test 7~ 다 틀림 뭐지 테스트 케이스가?
+    fun 스킬테스트_레벨_2_피보나치(n: Int): Int {
+        val list = mutableListOf(0, 1)
+
+        var index = 2
+        while (index <= n) {
+            val result = list[index-1] + list[index-2]
+            list.add(result)
+            index++
+        }
+
+        return list[list.size-1] % 1234567
     }
 
     fun 스킬테스트_레벨_2_소수(numbers: String): Int {
@@ -149,6 +167,7 @@ object Skill {
         return count
     }
 
+    // 이진수
     fun 스킬체크테스트_레벨_2_문제_2(s: String): IntArray {
         return 스킬체크테스트_레벨_2_문제_2_fun(s, intArrayOf(0, 0))
     }
