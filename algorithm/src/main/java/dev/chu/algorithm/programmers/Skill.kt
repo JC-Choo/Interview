@@ -31,23 +31,41 @@ object Skill {
 //        println(스킬테스트_레벨_2_소수("17"))    // 3 -> 7 17 71
 //        println(스킬테스트_레벨_2_소수("011"))   // 2 -> 11 101
 
-        println(스킬테스트_레벨_2_피보나치(3)) // 2
-        println(스킬테스트_레벨_2_피보나치(4)) // 3
+//        println(스킬테스트_레벨_2_피보나치(3)) // 2
+//        println(스킬테스트_레벨_2_피보나치(4)) // 3
         println(스킬테스트_레벨_2_피보나치(5)) // 5
     }
 
-    // test 7~ 다 틀림 뭐지 테스트 케이스가?
+    /**
+     * 피보나치 수는 F(0) = 0, F(1) = 1일 때, 1 이상의 n에 대하여 F(n) = F(n-1) + F(n-2) 가 적용되는 수 입니다.
+     * 예를들어
+    F(2) = F(0) + F(1) = 0 + 1 = 1
+    F(3) = F(1) + F(2) = 1 + 1 = 2
+    F(4) = F(2) + F(3) = 1 + 2 = 3
+    F(5) = F(3) + F(4) = 2 + 3 = 5
+     * 와 같이 이어집니다.
+     * 2 이상의 n이 입력되었을 때, n번째 피보나치 수를 1234567으로 나눈 나머지를 리턴하는 함수, solution을 완성해 주세요.
+     *
+     * test 7~ 다 틀렸는데, 해당 문제는 n번째 피보나치 수를 1234567로 나눈 값을 피보나치해 n번째 값을 구하라는 뜻이다.
+     * 즉, F(5) = F(3) + F(4) 를 구하는게 아닌
+     * F(5) = (F(3) + F(4)) % 1234567 을 구하라는 뜻이다.
+     * 뭐 이런 ...설명이..
+     */
     fun 스킬테스트_레벨_2_피보나치(n: Int): Int {
+        if (n < 2) return 0
+
         val list = mutableListOf(0, 1)
 
         var index = 2
         while (index <= n) {
             val result = list[index-1] + list[index-2]
-            list.add(result)
+            list.add(result % 1234567)
             index++
         }
+        list.forEach { print("$it ") }
+        println()
 
-        return list[list.size-1] % 1234567
+        return list[list.size-1]
     }
 
     fun 스킬테스트_레벨_2_소수(numbers: String): Int {
