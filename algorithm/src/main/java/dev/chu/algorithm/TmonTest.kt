@@ -44,13 +44,13 @@ object TmonTest {
         var result = 0
         while (result < 500_000) {
             result = list[index - 1] + list[index - 2]
-            if (result < 500_000) {
-                list.add(result)
-                index++
-            }
+            list.add(result)
+            index++
         }
 
         val sum = list.filter {
+            it < 500_000
+        }.filter {
             it%2 == 1
         }.sum()
         println("sum = $sum")
