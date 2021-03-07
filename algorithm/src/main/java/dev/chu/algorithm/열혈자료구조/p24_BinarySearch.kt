@@ -10,11 +10,11 @@ package dev.chu.algorithm.열혈자료구조
 object BinarySearch {
     @JvmStatic
     fun main(args: Array<String>) {
-        val target = 1
-//        val array = intArrayOf(3, 2, 1, 7, 9, 12, 21, 23, 27, 20)
-//        val arr = array.sorted().toIntArray()
+        val target = 23
+        val array = intArrayOf(3, 2, 1, 7, 9, 12, 21, 23, 27, 20)
+        val arr = array.sorted().toIntArray()
+        println("target = $target -> " + BSearch(arr, arr.size, target))
 //        println("target = $target -> " + 이진탐색(arr, 0, arr.size, target))
-//        println("target = $target -> " + BSearch(arr, arr.size, target))
 
         /**
          * O(log n)의 연산 횟수(9, 13, 16)는 O(n)의 연산 횟수(50, 500, 5000)보다 획기적으로 차이가 난다.

@@ -18,7 +18,7 @@ object LinearSearch {
 
     // 순차 탐색 알고리즘 적용된 함수
     private fun LSearch(arr: IntArray, len: Int, target: Int): Int {
-        arr.indices.forEachIndexed { i, _ ->
+        for (i in 0 until len) {
             if (arr[i] == target) {
                 return i    // 찾은 대상의 인덱스 값 반환
             }
