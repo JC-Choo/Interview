@@ -14,18 +14,17 @@ object BinarySearch {
         val array = intArrayOf(3, 2, 1, 7, 9, 12, 21, 23, 27, 20)
         val arr = array.sorted().toIntArray()
         println("target = $target -> " + BSearch(arr, arr.size, target))
-//        println("target = $target -> " + 이진탐색(arr, 0, arr.size, target))
 
         /**
          * O(log n)의 연산 횟수(9, 13, 16)는 O(n)의 연산 횟수(50, 500, 5000)보다 획기적으로 차이가 난다.
          * 그러므로, O(n)에서 O(log n) 알고리즘으로 변경하는 것은 약간의 성능 개선이 아닌 획기적인 개선이라 볼 수 있다.
          */
-        val arr50 = IntArray(50) { 0 }
-        val arr500 = IntArray(500) { 0 }
-        val arr5000 = IntArray(5000) { 0 }
-        result(BSearch(arr50, arr50.size, target))
-        result(BSearch(arr500, arr500.size, target))
-        result(BSearch(arr5000, arr5000.size, target))
+//        val arr50 = IntArray(50) { 0 }
+//        val arr500 = IntArray(500) { 0 }
+//        val arr5000 = IntArray(5000) { 0 }
+//        result(BSearch(arr50, arr50.size, target))
+//        result(BSearch(arr500, arr500.size, target))
+//        result(BSearch(arr5000, arr5000.size, target))
     }
 
     private fun BSearch(arr: IntArray, len: Int, target: Int): Int {
@@ -50,21 +49,6 @@ object BinarySearch {
 
         println("opCount = $opCount")
         return -1
-    }
-
-    private fun 이진탐색(arr: IntArray, startIndex: Int, endIndex: Int, target: Int): Int {
-        val midIndex = (startIndex + endIndex)/2
-        return if (startIndex > endIndex) {
-            -1
-        } else if (arr[midIndex] == target) {
-            midIndex
-        } else {
-            if (arr[midIndex] >= target) {  // startIndex ~ midIndex
-                이진탐색(arr, startIndex, midIndex - 1, target)
-            } else {        // midIndex ~ endIndex
-                이진탐색(arr, midIndex + 1, endIndex, target)
-            }
-        }
     }
 
     private fun result(idx: Int) {
