@@ -10,6 +10,7 @@ object Recursive {
 //        println("result = $result")
 
         hanoiTowerMove(3, "A", "B", "C")
+        hanoiTowerMove(3, "B", "C", "D")
 
 //        println("result = ${fibonacciSequence00(5)}")
 //        println("result = ${fibonacciSequence01(5)}")
