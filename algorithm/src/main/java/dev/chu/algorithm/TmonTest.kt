@@ -3,7 +3,7 @@ package dev.chu.algorithm
 object TmonTest {
     @JvmStatic
     fun main(args: Array<String>) {
-        q01()
+        q01()   // 906609 = 913 x 993
         q02()
     }
 
@@ -15,17 +15,28 @@ object TmonTest {
      */
     private fun q01() {
         val list = mutableListOf<String>()
-        for (i in 100 until 1000) {
-            for (j in 100 until 1000) {
-                val value = i * j
-                val str = value.toString()
-                if (str.length == 6) {
-                    if (str == str.reversed()) {
-                        list.add(str)
-                    }
-                }
+//        for (i in 100 until 1000) {
+//            for (j in 100 until 1000) {
+//                val value = i * j
+//                val str = value.toString()
+//                if (str.length == 6) {
+//                    if (str == str.reversed()) {
+//                        list.add(str)
+//                    }
+//                }
+//            }
+//        }
+
+        for (i in 10_000 until 998001) {
+            val str = i.toString()
+            if (str == str.reversed()) {
+                list.add(str)
             }
         }
+        list.sortedDescending().filter {
+            it.length == 6
+        }
+//        ??? 이렇게 할 수 있나>
         val result = list.sortedDescending()[0]
         println("result = $result")
     }
