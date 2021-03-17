@@ -14,29 +14,40 @@ object TmonTest {
      * (작성 개발 언어는 무관)
      */
     private fun q01() {
-        val list = mutableListOf<String>()
+        val list = mutableListOf<Int>()
 //        for (i in 100 until 1000) {
 //            for (j in 100 until 1000) {
 //                val value = i * j
 //                val str = value.toString()
-//                if (str.length == 6) {
-//                    if (str == str.reversed()) {
-//                        list.add(str)
-//                    }
+//                if (str == str.reversed()) {
+//                    list.add(value)
 //                }
 //            }
 //        }
 
-        for (i in 10_000 until 998001) {
-            val str = i.toString()
-            if (str == str.reversed()) {
-                list.add(str)
+        for (i in 1000 downTo 400) {
+            for (j in 1000 downTo 100) {
+                val value = i * j
+                val str = value.toString()
+                if (str == str.reversed()) {
+                    println("i = $i, j = $j")
+                    list.add(value)
+                    break
+                }
             }
         }
-        list.sortedDescending().filter {
-            it.length == 6
-        }
+
 //        ??? 이렇게 할 수 있나>
+//        for (i in 100_000 until 1_000_000) {
+//            val str = i.toString()
+//            if (str == str.reversed()) {
+//                list.add(i)
+//            }
+//        }
+//
+//        for (i in 100 until 1000) {
+//
+//        }
         val result = list.sortedDescending()[0]
         println("result = $result")
     }
@@ -62,7 +73,7 @@ object TmonTest {
         val sum = list.filter {
             it < 500_000
         }.filter {
-            it%2 == 1
+            it % 2 == 1
         }.sum()
         println("sum = $sum")
     }
