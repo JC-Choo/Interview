@@ -21,8 +21,15 @@ public class MyLinkedList implements List<Object> {
             head = new Node(element);
         } else {
             Node node = head;
-            for (; node.next != null; node = node.next) {
-                node.next = new Node(element);
+            int count = 0;
+            while (count <= size) {
+                if (node.next == null) {
+                    node.next = new Node(element);
+                    break;
+                } else {
+                    node = node.next;
+                }
+                count++;
             }
         }
         size++;
