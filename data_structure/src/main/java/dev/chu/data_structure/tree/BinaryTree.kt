@@ -6,6 +6,7 @@ class Node(var value: Int) {
 }
 
 class BinaryTree {
+
     var rootNode: Node? = null
 
     /**
